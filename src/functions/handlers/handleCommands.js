@@ -1,3 +1,6 @@
+const { REST } = require("@discordjs/rest");
+const { Routes } = require("discord-api-types/v9");
+
 const fs = require("fs");
 
 module.exports = (client) => {
@@ -18,6 +21,21 @@ module.exports = (client) => {
           `Command: ${command.data.name} has passed through handler `
         );
       }
+    }
+
+    const clientId = "1062920025784209519";
+    const guildId = "982784306084716654";
+    const rest = new REST({ version: "9" }).setToken(process.env.token);
+    try {
+      console.log("Started refreshing commands.");
+
+      await rest.put(Routes.applicationCommands(clientId, guildId), {
+        body: client.commandArray,
+      });
+
+      console.log("Successfully reloaded commands.");
+    } catch (error) {
+      console.error(error);
     }
   };
 };
