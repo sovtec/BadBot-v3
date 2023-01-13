@@ -28,6 +28,10 @@ module.exports = {
       } catch (err) {
         console.error(err);
       }
+      //??
+    }
+    if (interaction.message.mentions.users.has(message.guild.ownerId)) {
+      message.reply("Imagine pinging server owner.");
     }
   },
 };
