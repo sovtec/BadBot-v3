@@ -7,6 +7,8 @@ const fs = require("fs");
 const client = new Client({ intents: GatewayIntentBits.Guilds });
 client.commands = new Collection();
 client.commandArray = [];
+client.buttons = new Collection();
+client.color = 0x0099ff;
 
 //henter alle mapper fra src/functions
 const functionFolders = fs.readdirSync(`./src/functions`);
@@ -22,4 +24,5 @@ for (const folder of functionFolders) {
 
 client.handleEvents();
 client.handleCommands();
+client.handleComponents();
 client.login(token);
