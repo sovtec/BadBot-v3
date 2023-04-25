@@ -9,7 +9,6 @@ client.commands = new Collection();
 client.commandArray = [];
 client.buttons = new Collection();
 client.color = 0x0099ff;
-const buttons = new Collection();
 
 //henter alle mapper fra src/functions
 const functionFolders = fs.readdirSync(`./src/functions`);
@@ -23,7 +22,6 @@ for (const folder of functionFolders) {
     require(`./functions/${folder}/${file}`)(client);
 }
 
-client.buttons = buttons;
 client.handleEvents();
 client.handleCommands();
 client.handleComponents();
