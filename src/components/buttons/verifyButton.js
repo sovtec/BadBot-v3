@@ -1,4 +1,5 @@
 const fs = require("fs");
+const wait = require("node:timers/promises").setTimeout;
 const yaml = require("js-yaml");
 const configFile = fs.readFileSync("./config.yml", "utf8");
 const config = yaml.load(configFile);

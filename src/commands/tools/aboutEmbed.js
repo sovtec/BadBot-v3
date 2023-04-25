@@ -34,6 +34,7 @@ module.exports = {
       }); */
     await interaction.reply({
       embeds: [embedAbout],
+      ephemeral: true,
     });
   },
 };
