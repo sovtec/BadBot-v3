@@ -1,0 +1,26 @@
+helpCommand:
+  title: BadBot
+  description: "Checking this **bold** description"
+  thumbnail_img: https://i.imgur.com/xxemNry.png
+  color: "#0099ff"
+
+aboutEmbed:
+  title: "BadBot-v3"
+  description: "**A nice Discord bot made by __hrdu__**"
+  fields:
+    - name: "\u200B"
+      value: "Use /help for help"
+      inline: true
+
+noPermissionMessage:
+  content: "You don't have the correct permissions to use this"
+  ephemeral: true
+
+verifyButton:
+  alreadyVerifiedMessage: "You are already verified <:mc_deny:1100288311236497479>"
+  successMessage: "You are now verified <:mc_accept:1100288309240012870>"
+  dmEmbed:
+    title: "Welcome to **DuelDen** <:mc_swords:1100288310502494239>"
+    description: "You are now verified! enjoy your stay"
+    thumbnail: "https://i.imgur.com/sYQV4sS.png"
+    color: "#4b6ce6"
