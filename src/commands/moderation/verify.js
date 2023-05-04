@@ -14,7 +14,7 @@ const config = yaml.load(configFile);
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("verify")
-    .setDescription("Verification message"),
+    .setDescription("Send verification message"),
   async execute(interaction, client) {
     if (
       !interaction.member.permissions.has(
@@ -35,7 +35,9 @@ module.exports = {
       .setColor("#4b6ce6")
       .setTitle("Server Verification")
       .setThumbnail("https://i.imgur.com/sYQV4sS.png")
-      .setDescription("Before you can view the rest of the server, you must prove that you are not a bot account.\nTo do so, simply click the button attached to this message");
+      .setDescription(
+        "Before you can view the rest of the server, you must prove that you are not a bot account.\nTo do so, simply click the button attached to this message"
+      );
 
     await interaction.reply({ embeds: [embed], components: [button] });
   },

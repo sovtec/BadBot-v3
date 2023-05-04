@@ -8,6 +8,7 @@ const client = new Client({ intents: GatewayIntentBits.Guilds });
 client.commands = new Collection();
 client.commandArray = [];
 client.buttons = new Collection();
+client.selectMenus = new Collection();
 client.color = 0x0099ff;
 const buttons = new Collection();
 
