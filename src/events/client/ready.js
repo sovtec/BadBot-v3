@@ -1,7 +1,10 @@
+const chalk = require("chalk");
 module.exports = {
   name: "ready",
   once: true,
   async execute(client) {
-    console.log(`Ready... ${client.user.tag} online`);
+    console.log(
+      `Ready... ${client.user.tag}` + chalk.green(" online"),
+    );
   },
 };
