@@ -11,6 +11,8 @@ client.commandArray = [];
 client.buttons = new Collection();
 client.selectMenus = new Collection();
 client.color = 0x0099ff;
+client.modals = new Collection();
+
 const buttons = new Collection();
 
 //henter alle mapper fra src/functions

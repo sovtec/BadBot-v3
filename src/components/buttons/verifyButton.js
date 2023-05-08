@@ -34,7 +34,28 @@ module.exports = {
       .setThumbnail(config.verifyButton.dmEmbed.thumbnail)
       .setDescription(`${config.verifyButton.dmEmbed.description}`);
 
+    const channelId = "1102726992052359178";
+    const customChannel = interaction.guild.channels.cache.get(channelId);
+
+    const channelEmbed = new EmbedBuilder()
+      .setColor("#0099ff")
+      .setTitle("<:enchanted_apple:1100286431802425344> New member!")
+      .setDescription(
+        `${member} has joined ${interaction.guild.name}\n\n**Welcome!**\nYou are the ${interaction.guild.memberCount}th member`
+      )
+      .setThumbnail(
+        member.user.displayAvatarURL({
+          format: "png",
+          dynamic: true,
+          size: 1024,
+        })
+      )
+      .setTimestamp(Date.now());
+
     // Send the embed as a DM
+
+    customChannel.send({ embeds: [channelEmbed] });
+
     interaction.user.send({ embeds: [embed] }).catch((err) => {
       return;
     });
