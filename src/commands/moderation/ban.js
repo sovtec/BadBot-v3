@@ -1,4 +1,8 @@
-const { SlashCommandBuilder, PermissionsBitField, EmbedBuilder } = require("discord.js");
+const {
+  SlashCommandBuilder,
+  PermissionsBitField,
+  EmbedBuilder,
+} = require("discord.js");
 
 const fs = require("fs");
 const yaml = require("js-yaml");
@@ -40,8 +44,12 @@ module.exports = {
       .setColor("#4b6ce6")
       .setTitle(`:anger: Banned`)
       .setTimestamp(Date.now())
+      .setFooter({
+        text: "BadBot",
+        iconURL: "https://i.imgur.com/xxemNry.png",
+      })
       .setDescription(
-        `\`${user.username}\` **has been banned!**\n\n\`Reason:\` ${reason}`
+        `${user} **has been banned!**\n\n\`Reason:\` ${reason}`
       );
 
     await member

@@ -1,21 +1,32 @@
+##=========== HELP EMBED ============
 helpCommand:
   title: BadBot
   description: "More info coming soon"
+  fields:
+    - name: ":jigsaw: User"
+      value: "/help\n/about\n/ping\n/ping-advanced"
+      inline: true
   thumbnail_img: https://i.imgur.com/xxemNry.png
   color: "#0099ff"
 
+##=========== ABOUT EMBED ============
 aboutEmbed:
   title: "BadBot-v3"
-  description: "**A nice Discord bot made by __hrdu__**"
+  description: "**Custom modBot made for DualDen**"
   fields:
     - name: "\u200B"
       value: "Use /help for help"
       inline: true
 
+##=========== GLOBAL NO PERMISSION MESSAGE ============
 noPermissionMessage:
-  content: "You don't have the correct permissions to use this"
+  content: "You don't have the correct permissions to use this!"
   ephemeral: true
 
+messageSent:
+  title: "Message sent!"
+
+##=========== VERIFY ============
 verifyButton:
   alreadyVerifiedMessage: "You are already verified <:mc_deny:1100288311236497479>"
   successMessage: "You are now verified <:mc_accept:1100288309240012870>"
@@ -24,3 +35,45 @@ verifyButton:
     description: "You are now verified! enjoy your stay"
     thumbnail: "https://i.imgur.com/sYQV4sS.png"
     color: "#4b6ce6"
+
+##=========== STAFFHELP EMBED ============    
+staffhelp:
+  description: "\u200B"
+  fields:
+    - name: ":police_officer: Staff" # \u200B = blank (none)
+      value: "/ban\n/mute\n/kick"
+      inline: true
+    - name: ":tools: Admin"
+      value: "/verify\n/faq\n/rules"
+      inline: true
+    - name: ":jigsaw: User"
+      value: "/help\n/about\n/ping\n/ping-advanced"
+      inline: true
+  
+
+##=========== RULES ============
+rulesEmbed:
+  rulesDescription: "**:one: Be respectful**\n You must respect all users, regardless of your liking towards them. Treat others the way you want to be treated.\n
+
+**:two: No Inappropriate Language**\n
+The use of profanity should be kept to a minimum.\n
+
+**:three: No spamming**\n
+Don't send a lot of small messages right after each other. Do not disrupt chat by spamming.\n
+
+**:four: No pornographic/adult/other NSFW material**\n
+This is a pvp community server and not meant to share this kind of material.\n
+
+**:five: No advertisements**\n
+We do not tolerate any kind of advertisements, whether it be for other communities or streams.\n
+
+**:six: Server Raiding**\n
+Raiding or mentions of raiding are not allowed.\n
+
+**:seven: Direct & Indirect Threats**\n
+Threats to other users of DDoS, Death, DoX, abuse, and other malicious threats are absolutely prohibited and disallowed.\n
+
+**:eight: Follow the Discord Community Guidelines**\n
+You can find them here: https://discordapp.com/guidelines\n
+
+*Your presence in this server implies accepting these rules, including all further changes. These changes might be done at any time without notice, it is your responsibility to check for them.*"

@@ -39,17 +39,20 @@ module.exports = {
 
     if (!reason) reason = "No reason provided";
 
-    await user
-      .send({
-        content: `You have been kicked from ${interaction.guild.name}\n\`Reason:\` ${reason}`,
-      })
+    await user.send({
+      content: `You have been kicked from ${interaction.guild.name}\n\`Reason:\` ${reason}`,
+    });
 
     const embed = new EmbedBuilder()
       .setColor("#4b6ce6")
       .setTitle(`:no_entry_sign: Kicked`)
       .setTimestamp(Date.now())
+      .setFooter({
+        text: "BadBot",
+        iconURL: "https://i.imgur.com/xxemNry.png",
+      })
       .setDescription(
-        `\`${user.username}\` **has been kicked!**\n\n\`Reason:\` ${reason}`
+        `${user} **has been kicked!**\n\n\`Reason:\` ${reason}`
       );
 
     await member.kick(reason).catch(console.error);

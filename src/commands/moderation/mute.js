@@ -55,8 +55,12 @@ module.exports = {
       .setColor("#4b6ce6")
       .setTitle(`:warning: Take a break!`)
       .setTimestamp(Date.now())
+      .setFooter({
+        text: "BadBot",
+        iconURL: "https://i.imgur.com/xxemNry.png",
+      })
       .setDescription(
-        `\`${user.username}\` **has been muted**\n\n\`Reason:\` ${reason}\n\`Duration:\` ${time} min`
+        `${user} **has been muted**\n\n\`Reason:\` ${reason}\n\`Duration:\` ${time} min`
       );
 
     await interaction.reply({ embeds: [embed] });

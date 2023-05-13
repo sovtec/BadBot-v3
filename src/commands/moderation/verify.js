@@ -31,6 +31,10 @@ module.exports = {
         .setStyle(ButtonStyle.Success)
     );
 
+    const embedPre = new EmbedBuilder()
+      .setColor("#4b6ce6")
+      .setTitle(config.messageSent.title);
+
     const embed = new EmbedBuilder()
       .setColor("#4b6ce6")
       .setTitle("Server Verification")
@@ -39,6 +43,11 @@ module.exports = {
         "Before you can view the rest of the server, you must prove that you are not a bot account.\nTo do so, simply click the button attached to this message"
       );
 
-    await interaction.reply({ embeds: [embed], components: [button] });
+    await interaction.reply({
+      embeds: [embedPre],
+      ephemeral: true,
+    });
+
+    interaction.channel.send({ embeds: [embed], components: [button] });
   },
 };

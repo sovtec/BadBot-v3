@@ -3,16 +3,23 @@ const {
   ActionRowBuilder,
   ButtonBuilder,
   ButtonStyle,
+  PermissionsBitField,
 } = require("discord.js");
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName("hellobtn")
-    .setDescription("Return hello button"),
+    .setName("hello")
+    .setDescription("Sleek button.."),
   async execute(interaction, client) {
+    if (
+      !interaction.member.permissions.has(
+        PermissionsBitField.Flags.Administrator
+      )
+    )
+      return await interaction.reply(config.noPermissionMessage);
     const button = new ButtonBuilder()
       .setCustomId(`helloButton`)
-      .setLabel(`Click me to say hi!`)
+      .setLabel(`Hi!`)
       .setStyle(ButtonStyle.Primary);
 
     await interaction.reply({
